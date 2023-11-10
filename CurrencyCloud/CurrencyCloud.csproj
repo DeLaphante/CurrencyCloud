@@ -14,14 +14,24 @@
   <ItemGroup>
     <Compile Remove="Enums\**" />
     <Compile Remove="Features\API\CustomerService\**" />
+    <Compile Remove="JsonBuilder\**" />
+    <Compile Remove="Utilities\**" />
     <EmbeddedResource Remove="Enums\**" />
     <EmbeddedResource Remove="Features\API\CustomerService\**" />
+    <EmbeddedResource Remove="JsonBuilder\**" />
+    <EmbeddedResource Remove="Utilities\**" />
     <None Remove="Enums\**" />
     <None Remove="Features\API\CustomerService\**" />
+    <None Remove="JsonBuilder\**" />
+    <None Remove="Utilities\**" />
     <SpecFlowFeatureFiles Remove="Enums\**" />
     <SpecFlowFeatureFiles Remove="Features\API\CustomerService\**" />
+    <SpecFlowFeatureFiles Remove="JsonBuilder\**" />
+    <SpecFlowFeatureFiles Remove="Utilities\**" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Enums\**" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\API\CustomerService\**" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="JsonBuilder\**" />
+    <SpecFlowObsoleteCodeBehindFiles Remove="Utilities\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -105,8 +115,6 @@
   <ItemGroup>
     <Folder Include="Data\Files\ExpectedPages\" />
     <Folder Include="Features\API\" />
-    <Folder Include="JsonBuilder\" />
     <Folder Include="Models\API\Request\" />
-    <Folder Include="Utilities\" />
   </ItemGroup>  
 </Project>
