@@ -74,7 +74,7 @@ namespace CurrencyCloud.StepDefinitions.API
         public void WhenAPostFormDataRequestIsSentToTheLoginEndpoint()
         {
             var formData = _ScenarioContext.Get<List<KeyValuePair<string, string>>>("formData");
-            _Request.SendRequestToEndpoint(Method.POSTFORM, AuthenticateEndpointBuilder.GetLoginEndpoint(), formData: formData);
+            _Request.SendRequest(Method.POSTFORM, AuthenticateEndpointBuilder.GetLoginEndpoint(), formData: formData);
         }
 
         [StepDefinition(@"a (.*) response should be returned")]
@@ -132,7 +132,7 @@ namespace CurrencyCloud.StepDefinitions.API
         [When(@"a post request is sent  to the logout endpoint")]
         public void WhenAPostRequestIsSentToTheLogoutEndpoint()
         {
-            _Request.SendRequestToEndpoint(Method.POST, AuthenticateEndpointBuilder.GetLogoutEndpoint());
+            _Request.SendRequest(Method.POST, AuthenticateEndpointBuilder.GetLogoutEndpoint());
         }
 
     }
