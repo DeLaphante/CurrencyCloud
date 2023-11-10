@@ -17,3 +17,7 @@ In the secrets.json file enter your registered email and generated api key
 *** Running Tests ***
 
 [CurrencyCloud.webm](https://github.com/DeLaphante/CurrencyCloud/assets/6398105/0524632b-ff8f-480f-808d-aa5f2dc91c72)
+
+*** Viewing API logs ***
+
+[ApiLogs.webm](https://github.com/DeLaphante/CurrencyCloud/assets/6398105/9cd5ff2a-2cdc-4352-b1d9-a2b98b3b1d15)
