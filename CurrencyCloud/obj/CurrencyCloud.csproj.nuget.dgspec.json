@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Personal\\Source\\Repos\\CurrencyCloud\\CurrencyCloud\\CurrencyCloud.csproj": {}
+    "C:\\Users\\Personal\\source\\repos\\CurrencyCloud\\CurrencyCloud\\CurrencyCloud.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Personal\\Source\\Repos\\CurrencyCloud\\CurrencyCloud\\CurrencyCloud.csproj": {
+    "C:\\Users\\Personal\\source\\repos\\CurrencyCloud\\CurrencyCloud\\CurrencyCloud.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Personal\\Source\\Repos\\CurrencyCloud\\CurrencyCloud\\CurrencyCloud.csproj",
+        "projectUniqueName": "C:\\Users\\Personal\\source\\repos\\CurrencyCloud\\CurrencyCloud\\CurrencyCloud.csproj",
         "projectName": "CurrencyCloud",
-        "projectPath": "C:\\Users\\Personal\\Source\\Repos\\CurrencyCloud\\CurrencyCloud\\CurrencyCloud.csproj",
+        "projectPath": "C:\\Users\\Personal\\source\\repos\\CurrencyCloud\\CurrencyCloud\\CurrencyCloud.csproj",
         "packagesPath": "C:\\Users\\Personal\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Personal\\Source\\Repos\\CurrencyCloud\\CurrencyCloud\\obj\\",
         "projectStyle": "PackageReference",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OhQfcdPPkbZcl0o0yPJKo2fzQCX1XPHbpN51/p6SbVPiC0CR1CahDtO4Z+HRBmMJNHM5I/Qlmv2PmuXUQIhQGQ==",
+  "dgSpecHash": "bjkHcmCX4kc0l6/Yu79zBm4dDsnES48cu65cd25N85E4MNoKDI37Xlf4syACY1VReWWy3lPEwkkMd9rpr8GuSQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Personal\\Source\\Repos\\CurrencyCloud\\CurrencyCloud\\CurrencyCloud.csproj",
+  "projectFilePath": "C:\\Users\\Personal\\source\\repos\\CurrencyCloud\\CurrencyCloud\\CurrencyCloud.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Personal\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\Personal\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
