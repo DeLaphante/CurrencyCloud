@@ -28,7 +28,7 @@ namespace CurrencyCloud.StepDefinitions.API
         }
 
 
-        [StepDefinition(@"the form data has (.*) and (.*)")]
+        [StepDefinition(@"the form data has (.*) loginId and (.*) apiKey")]
         public void GivenTheFormDataHasValidAndValid(string loginId, string apiKey)
         {
             switch (loginId.ToLower())
