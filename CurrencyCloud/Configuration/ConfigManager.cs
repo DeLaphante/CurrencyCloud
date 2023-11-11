@@ -17,14 +17,8 @@ namespace CynkyAutomation.Configuration
 
         }
 
-        public static string ZephyrServiceUrl => _Configuration["ZephyrServiceUrl"];
-        public static string ZephyrProjectKey => _Configuration["ZephyrProjectKey"];
-        public static string PublishToZephyr => _Configuration["PublishToZephyr"];
         public static string RS_User => _Configuration["RS_User"];
         public static string RS_Key => _Configuration["RS_Key"];
-        public static string EmailUsername => _Configuration["EmailUsername"];
-        public static string EmailPassword => _Configuration["EmailPassword"];
-        public static string ZephyrBearerToken => _Configuration["ZephyrBearerToken"];
         public static string ApiKey => _Configuration["ApiKey"];
         public static string LoginId => _Configuration["Loginid"];
 

@@ -89,17 +89,8 @@
     <None Update="Logs\Api\Placeholder.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Logs\Browser\Placeholder.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="Reports\Analysis\CynkyModel.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Reports\Results\ScreenShots\Placeholder.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Data\Files\CapturedPages\Placeholder.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 
@@ -113,8 +104,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\Files\ExpectedPages\" />
     <Folder Include="Features\API\" />
     <Folder Include="Models\API\Request\" />
+    <Folder Include="Reports\Results\" />
   </ItemGroup>  
 </Project>

@@ -1,5 +1,4 @@
 ﻿using CynkyHook;
-using CynkyUtilities.ZephyrScale;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Drawing;
 using TechTalk.SpecFlow;
@@ -11,7 +10,6 @@ namespace CynkyAutomation.Configuration
     class Hooks
     {
         Config _Config;
-        ZephyrClient _ZephyrClient;
         FeatureContext _FeatureContext;
         ScenarioContext _ScenarioContext;
 
@@ -20,7 +18,6 @@ namespace CynkyAutomation.Configuration
             _FeatureContext = scenarioContext.ScenarioContainer.Resolve<FeatureContext>();
             _ScenarioContext = scenarioContext.ScenarioContainer.Resolve<ScenarioContext>();
             _Config = scenarioContext.ScenarioContainer.Resolve<Config>();
-            _ZephyrClient = new ZephyrClient(ConfigManager.ZephyrBearerToken, ConfigManager.ZephyrServiceUrl, ConfigManager.ZephyrProjectKey);
         }
 
         [BeforeTestRun]
@@ -46,8 +43,6 @@ namespace CynkyAutomation.Configuration
         void AfterScenario()
         {
             _Config.AfterScenario(_ScenarioContext);
-            if (ConfigManager.PublishToZephyr.ToLower() == "true")
-                _ZephyrClient.UpdateResultsToZephyr(_FeatureContext, _ScenarioContext);
 
         }
 
