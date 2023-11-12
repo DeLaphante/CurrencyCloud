@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System;
 
-namespace CynkyAutomation.Configuration
+namespace CurrencyCloud.Configuration
 {
     public class ConfigManager
     {

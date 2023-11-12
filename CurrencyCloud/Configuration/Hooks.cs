@@ -4,7 +4,7 @@ using System.Drawing;
 using TechTalk.SpecFlow;
 
 [assembly: Parallelize(Workers = 100, Scope = ExecutionScope.ClassLevel)]
-namespace CynkyAutomation.Configuration
+namespace CurrencyCloud.Configuration
 {
     [Binding]
     class Hooks

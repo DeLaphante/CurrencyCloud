@@ -1,6 +1,6 @@
 using CurrencyCloud.EndpointBuilder;
 using CurrencyCloud.Models.API.Response;
-using CynkyAutomation.Configuration;
+using CurrencyCloud.Configuration;
 using CynkyHttp;
 using FluentAssertions;
 using System;
