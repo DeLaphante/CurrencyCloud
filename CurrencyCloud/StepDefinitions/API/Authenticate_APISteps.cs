@@ -14,16 +14,13 @@ namespace CurrencyCloud.StepDefinitions.API
     public class Authenticate_APISteps
     {
         CynkyClient _CynkyClient;
-
         ScenarioContext _ScenarioContext;
-
 
         public Authenticate_APISteps(ScenarioContext scenarioContext)
         {
             _CynkyClient = scenarioContext.ScenarioContainer.Resolve<CynkyClient>();
             _ScenarioContext = scenarioContext.ScenarioContainer.Resolve<ScenarioContext>();
         }
-
 
         [StepDefinition(@"the form data has (.*) loginId and (.*) apiKey")]
         public void GivenTheFormDataHasValidAndValid(string loginId, string apiKey)
@@ -131,6 +128,5 @@ namespace CurrencyCloud.StepDefinitions.API
         {
             _CynkyClient.SendRequest(Method.POST, AuthenticateEndpointBuilder.GetLogoutEndpoint());
         }
-
     }
 }
