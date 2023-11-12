@@ -1,6 +1,6 @@
+using CurrencyCloud.Configuration;
 using CurrencyCloud.EndpointBuilder;
 using CurrencyCloud.Models.API.Response;
-using CurrencyCloud.Configuration;
 using CynkyHttp;
 using FluentAssertions;
 using System;
@@ -13,17 +13,14 @@ namespace CurrencyCloud.StepDefinitions.API
     [Binding]
     public class Authenticate_APISteps
     {
-        Request _Request;
-        Response _Response;
-        Headers _Headers;
+        CynkyClient _CynkyClient;
+
         ScenarioContext _ScenarioContext;
 
 
         public Authenticate_APISteps(ScenarioContext scenarioContext)
         {
-            _Request = scenarioContext.ScenarioContainer.Resolve<Request>();
-            _Response = scenarioContext.ScenarioContainer.Resolve<Response>();
-            _Headers = scenarioContext.ScenarioContainer.Resolve<Headers>();
+            _CynkyClient = scenarioContext.ScenarioContainer.Resolve<CynkyClient>();
             _ScenarioContext = scenarioContext.ScenarioContainer.Resolve<ScenarioContext>();
         }
 
@@ -74,7 +71,7 @@ namespace CurrencyCloud.StepDefinitions.API
         public void WhenAPostFormDataRequestIsSentToTheLoginEndpoint()
         {
             var formData = _ScenarioContext.Get<List<KeyValuePair<string, string>>>("formData");
-            _Request.SendRequest(Method.POSTFORM, AuthenticateEndpointBuilder.GetLoginEndpoint(), formData: formData);
+            _CynkyClient.SendRequest(Method.POSTFORM, AuthenticateEndpointBuilder.GetLoginEndpoint(), formData: formData);
         }
 
         [StepDefinition(@"a (.*) response should be returned")]
@@ -83,24 +80,24 @@ namespace CurrencyCloud.StepDefinitions.API
             switch (response.ToLower())
             {
                 case "ok":
-                    _Response.GetStatusCode().Should().Be(HttpStatusCode.OK);
-                    if (_Response.GetResponseBody<AuthResponse>().auth_token != null)
+                    _CynkyClient.GetStatusCode().Should().Be(HttpStatusCode.OK);
+                    if (_CynkyClient.GetResponseBody<AuthResponse>().auth_token != null)
                     {
-                        _Response.GetResponseBody<AuthResponse>().auth_token.Should().NotBeNullOrEmpty();
-                        _ScenarioContext.Set<AuthResponse>(_Response.GetResponseBody<AuthResponse>(), "authToken");
+                        _CynkyClient.GetResponseBody<AuthResponse>().auth_token.Should().NotBeNullOrEmpty();
+                        _ScenarioContext.Set<AuthResponse>(_CynkyClient.GetResponseBody<AuthResponse>(), "authToken");
                     }
                     break;
                 case "unauthorized":
-                    _Response.GetStatusCode().Should().Be(HttpStatusCode.Unauthorized);
-                    _Response.GetResponseBody<AuthInvalidResponse>().error_code.Should().Be("auth_failed");
+                    _CynkyClient.GetStatusCode().Should().Be(HttpStatusCode.Unauthorized);
+                    _CynkyClient.GetResponseBody<AuthInvalidResponse>().error_code.Should().Be("auth_failed");
                     break;
                 case "badrequest":
-                    _Response.GetStatusCode().Should().Be(HttpStatusCode.BadRequest);
-                    _Response.GetResponseBody<AuthInvalidResponse>().error_code.Should().Be("auth_invalid_user_login_details");
+                    _CynkyClient.GetStatusCode().Should().Be(HttpStatusCode.BadRequest);
+                    _CynkyClient.GetResponseBody<AuthInvalidResponse>().error_code.Should().Be("auth_invalid_user_login_details");
                     break;
                 case "empty":
-                    _Response.GetStatusCode().Should().Be(HttpStatusCode.OK);
-                    _Response.GetResponseBody().Should().Be("{}");
+                    _CynkyClient.GetStatusCode().Should().Be(HttpStatusCode.OK);
+                    _CynkyClient.GetResponseBody().Should().Be("{}");
                     break;
                 default:
                     throw new Exception("Unknown response value!");
@@ -113,13 +110,13 @@ namespace CurrencyCloud.StepDefinitions.API
             switch (authToken.ToLower())
             {
                 case "valid":
-                    _Headers.AddHeader("X-Auth-Token", _ScenarioContext.Get<AuthResponse>("authToken").auth_token);
+                    _CynkyClient.AddHeader("X-Auth-Token", _ScenarioContext.Get<AuthResponse>("authToken").auth_token);
                     break;
                 case "invalid":
-                    _Headers.AddHeader("X-Auth-Token", "asdasd");
+                    _CynkyClient.AddHeader("X-Auth-Token", "asdasd");
                     break;
                 case "empty":
-                    _Headers.AddHeader("X-Auth-Token", string.Empty);
+                    _CynkyClient.AddHeader("X-Auth-Token", string.Empty);
                     break;
                 case "none":
                     break;
@@ -132,7 +129,7 @@ namespace CurrencyCloud.StepDefinitions.API
         [When(@"a post request is sent  to the logout endpoint")]
         public void WhenAPostRequestIsSentToTheLogoutEndpoint()
         {
-            _Request.SendRequest(Method.POST, AuthenticateEndpointBuilder.GetLogoutEndpoint());
+            _CynkyClient.SendRequest(Method.POST, AuthenticateEndpointBuilder.GetLogoutEndpoint());
         }
 
     }
