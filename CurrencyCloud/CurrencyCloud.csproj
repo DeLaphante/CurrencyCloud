@@ -91,6 +91,9 @@
     <None Update="Reports\Analysis\CynkyModel.zip">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Reports\Results\Placeholder.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -105,6 +108,5 @@
   <ItemGroup>
     <Folder Include="Features\API\" />
     <Folder Include="Models\API\Request\" />
-    <Folder Include="Reports\Results\" />
   </ItemGroup>  
 </Project>
