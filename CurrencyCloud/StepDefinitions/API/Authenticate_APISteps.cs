@@ -4,7 +4,6 @@ using CurrencyCloud.Models.API.Response;
 using CynkyHttp;
 using FluentAssertions;
 using System;
-using System.Collections.Generic;
 using System.Net;
 using TechTalk.SpecFlow;
 
