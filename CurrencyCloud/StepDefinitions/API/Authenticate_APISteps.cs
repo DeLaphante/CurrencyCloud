@@ -55,20 +55,14 @@ namespace CurrencyCloud.StepDefinitions.API
                     throw new Exception("Unknown apiKey value!");
             }
 
-            var formData = new List<KeyValuePair<string, string>>()
-            {
-                new KeyValuePair<string, string>("login_id", loginId),
-                new KeyValuePair<string, string>("api_key", apiKey)
-            };
-
-            _ScenarioContext.Set<List<KeyValuePair<string, string>>>(formData, "formData");
+            _CynkyClient.AddFormData("login_id", loginId);
+            _CynkyClient.AddFormData("api_key", apiKey);
         }
 
         [StepDefinition(@"a post form data request is sent to the login endpoint")]
         public void WhenAPostFormDataRequestIsSentToTheLoginEndpoint()
         {
-            var formData = _ScenarioContext.Get<List<KeyValuePair<string, string>>>("formData");
-            _CynkyClient.SendRequest(Method.POSTFORM, AuthenticateEndpointBuilder.GetLoginEndpoint(), formData: formData);
+            _CynkyClient.SendRequest(Method.POSTFORM, AuthenticateEndpointBuilder.GetLoginEndpoint());
         }
 
         [StepDefinition(@"a (.*) response should be returned")]
