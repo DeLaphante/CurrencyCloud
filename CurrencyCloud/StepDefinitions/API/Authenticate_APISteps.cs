@@ -5,7 +5,7 @@ using CynkyHttp;
 using FluentAssertions;
 using System;
 using System.Net;
-using TechTalk.SpecFlow;
+using Reqnroll;
 
 namespace CurrencyCloud.StepDefinitions.API
 {
