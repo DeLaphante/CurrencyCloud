@@ -71,19 +71,19 @@ namespace CurrencyCloud.StepDefinitions.API
             {
                 case "ok":
                     _CynkyClient.GetStatusCode().Should().Be(HttpStatusCode.OK);
-                    if (_CynkyClient.GetResponseBody<AuthResponse>().auth_token != null)
+                    if (_CynkyClient.GetJsonResponseBody<AuthResponse>().auth_token != null)
                     {
-                        _CynkyClient.GetResponseBody<AuthResponse>().auth_token.Should().NotBeNullOrEmpty();
-                        _ScenarioContext.Set<AuthResponse>(_CynkyClient.GetResponseBody<AuthResponse>(), "authToken");
+                        _CynkyClient.GetJsonResponseBody<AuthResponse>().auth_token.Should().NotBeNullOrEmpty();
+                        _ScenarioContext.Set<AuthResponse>(_CynkyClient.GetJsonResponseBody<AuthResponse>(), "authToken");
                     }
                     break;
                 case "unauthorized":
                     _CynkyClient.GetStatusCode().Should().Be(HttpStatusCode.Unauthorized);
-                    _CynkyClient.GetResponseBody<AuthInvalidResponse>().error_code.Should().Be("auth_failed");
+                    _CynkyClient.GetJsonResponseBody<AuthInvalidResponse>().error_code.Should().Be("auth_failed");
                     break;
                 case "badrequest":
                     _CynkyClient.GetStatusCode().Should().Be(HttpStatusCode.BadRequest);
-                    _CynkyClient.GetResponseBody<AuthInvalidResponse>().error_code.Should().Be("auth_invalid_user_login_details");
+                    _CynkyClient.GetJsonResponseBody<AuthInvalidResponse>().error_code.Should().Be("auth_invalid_user_login_details");
                     break;
                 case "empty":
                     _CynkyClient.GetStatusCode().Should().Be(HttpStatusCode.OK);
