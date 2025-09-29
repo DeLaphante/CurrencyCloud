@@ -3,9 +3,9 @@ using CurrencyCloud.EndpointBuilder;
 using CurrencyCloud.Models.API.Response;
 using CynkyHttp;
 using FluentAssertions;
+using Reqnroll;
 using System;
 using System.Net;
-using Reqnroll;
 
 namespace CurrencyCloud.StepDefinitions.API
 {
